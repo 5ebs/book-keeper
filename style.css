@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #25251d;
+  --secondary-color:#22221a;
+  --border-radius: 5px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--primary-color);
+  font-family: 'Balsamiq Sans', cursive;
+}
+
+.video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: auto;
+  z-index: -2;
+}
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.233);
+  z-index: -1;
+}
+
+h1 {
+  color: var(--primary-color);
+  padding: 20px;
+  text-align: center;
+  width: 275px;
+  margin: 20px auto 10px;
+  user-select: none;
+}
+
+h2 {
+  color:var(--secondary-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  text-align: center;
+  width: 275px;
+  margin: 20px auto 10px;
+  user-select: none;
+  background: rgba(255, 255, 255, 0.63);
+}
+
+h2:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.fas {
+  padding-right: 1rem;
+}
+
+/* Bookmarks */
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.item {
+  background: rgba(255, 255, 255, 0.63);
+  color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  padding: 10px;
+  margin: 15px;
+}
+
+.item:hover {
+  background: rgba(255, 255, 255, 0.747);
+}
+
+a {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+a:link,
+a:visited {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+.fa-times {
+  position: relative;
+  right: 0px;
+  top:0px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.name {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.name img {
+  height: 20px;
+  width: 20px;
+  vertical-align: sub;
+  margin-right: 5px;
+}
+
+/* Modal */
+.modal-container {
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.show-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background:var(--secondary-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  max-width: 95%;
+  width: 500px;
+  animation: modalopen 1s;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.close-icon {
+  float: right;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  position: relative;
+  top: 6px;
+  right: -10px;
+  cursor: pointer;
+}
+
+.modal-header {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 15px;
+}
+
+h3 {
+  margin: 0;
+}
+
+.modal-content {
+  padding: 20px;
+  background: whitesmoke;
+}
+
+/* Form */
+.form-group {
+  height: 55px;
+}
+
+.form-input {
+  width: 97%;
+  padding: 5px;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  display: block;
+  outline: none;
+}
+
+.form-label {
+  color: var(--primary-color);
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  color: white;
+  background: var(--primary-color);
+  border: none;
+  height: 30px;
+  width: 100px;
+  border-radius: var(--border-radius);
+  margin-top: 10px;
+}
+
+button:hover {
+  filter: brightness(110%);
+}
+
+button:focus {
+  outline: none;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+}
+video {
+  object-fit: cover;
+  object-position: 70%;
+  margin-top: -1px;
+}
+
+.video-background {
+  height: 100vh;
+  width: 100vw;
+}
